@@ -6,7 +6,7 @@ import Timer from "./Timer";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Timer lastSeen={1667481474813} />
+      <Timer lastSeen={1667483105704} />
       <StatusBar style="auto" />
     </View>
   );

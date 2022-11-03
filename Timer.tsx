@@ -10,7 +10,7 @@ export default function Timer({ lastSeen }: Props) {
   const [text, setText] = useState<string>("");
 
   useEffect(() => {
-    if (lastSeen - timeAgo > 60) {
+    if (lastSeen - timeAgo < 60) {
       setText("0 ... 60 seconds ago");
     } else {
       setText("1 .. n' minutes");
