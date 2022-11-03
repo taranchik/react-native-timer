@@ -6,17 +6,16 @@ type Props = {
 };
 
 export default function Timer({ lastSeen }: Props) {
-  const [timeAgo, setTimeAgo] = useState<number>(new Date().getTime());
   const [text, setText] = useState<string>("");
 
   useEffect(() => {
-    if (lastSeen - timeAgo < 60) {
+    const presentTimestamp = new Date().getTime();
+
+    if (presentTimestamp - lastSeen < 60000) {
       setText("0 ... 60 seconds ago");
     } else {
       setText("1 .. n' minutes");
     }
-
-    setTimeAgo(lastSeen);
   }, [lastSeen]);
 
   return (
